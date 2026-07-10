@@ -102,7 +102,7 @@ class _OfflineAiScreenState extends ConsumerState<OfflineAiScreen> {
       margin: const EdgeInsets.only(bottom: 16),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: Colors.grey.withOpacity(0.1)),
+        side: BorderSide(color: Colors.grey.withOpacity(0.1)),
       ),
       child: Padding(
         padding: const EdgeInsets.all(20.0),
@@ -142,3 +142,4 @@ class _OfflineAiScreenState extends ConsumerState<OfflineAiScreen> {
     );
   }
 }
+

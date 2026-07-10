@@ -5,7 +5,7 @@ part 'chat_message_model.freezed.dart';
 part 'chat_message_model.g.dart';
 
 @freezed
-class ChatMessageModel with _$ChatMessageModel {
+abstract class ChatMessageModel with _$ChatMessageModel {
   const factory ChatMessageModel({
     required String id,
     required String text,
@@ -20,7 +20,7 @@ class ChatMessageModel with _$ChatMessageModel {
 }
 
 @freezed
-class MessageAttachmentModel with _$MessageAttachmentModel {
+abstract class MessageAttachmentModel with _$MessageAttachmentModel {
   const factory MessageAttachmentModel({
     required String id,
     required String type,
@@ -51,3 +51,5 @@ extension MessageAttachmentModelX on MessageAttachmentModel {
         thumbnail: thumbnail,
       );
 }
+
+

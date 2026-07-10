@@ -5,7 +5,7 @@ import '../../../../core/constants/api_constants.dart';
 import '../../domain/entities/achievement.dart';
 import '../../domain/repositories/gamification_repository.dart';
 import '../models/achievement_model.dart';
-import '../models/badge_model.dart';
+import '../models/achievement_model.dart';
 
 class GamificationRepositoryImpl implements GamificationRepository {
   final ApiClient _apiClient;
@@ -55,3 +55,4 @@ class GamificationRepositoryImpl implements GamificationRepository {
     return const Right(null);
   }
 }
+

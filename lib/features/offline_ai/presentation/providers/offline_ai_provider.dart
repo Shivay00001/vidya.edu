@@ -1,9 +1,10 @@
+import '../../../auth/presentation/providers/auth_provider.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../domain/entities/offline_ai_model.dart';
 import '../../data/repositories/offline_ai_repository_impl.dart';
 
 // Repository Provider
-final offlineAiRepositoryProvider = Provider((ref) => OfflineAiRepositoryImpl());
+final offlineAiRepositoryProvider = Provider((ref) => OfflineAiRepositoryImpl(ref.read(apiClientProvider)));
 
 // State
 class OfflineAiState {
@@ -69,3 +70,4 @@ final offlineAiProvider =
     repository: ref.read(offlineAiRepositoryProvider),
   );
 });
+

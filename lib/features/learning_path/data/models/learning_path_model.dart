@@ -5,7 +5,7 @@ part 'learning_path_model.freezed.dart';
 part 'learning_path_model.g.dart';
 
 @freezed
-class LearningPathModel with _$LearningPathModel {
+abstract class LearningPathModel with _$LearningPathModel {
   const factory LearningPathModel({
     required String id,
     required String title,
@@ -19,7 +19,7 @@ class LearningPathModel with _$LearningPathModel {
 }
 
 @freezed
-class LessonModel with _$LessonModel {
+abstract class LessonModel with _$LessonModel {
   const factory LessonModel({
     required String id,
     required String title,
@@ -53,3 +53,5 @@ extension LessonModelX on LessonModel {
         quizQuestionIds: quizQuestionIds,
       );
 }
+
+

@@ -5,7 +5,7 @@ part 'offline_ai_model_model.freezed.dart';
 part 'offline_ai_model_model.g.dart';
 
 @freezed
-class OfflineAiModelModel with _$OfflineAiModelModel {
+abstract class OfflineAiModelModel with _$OfflineAiModelModel {
   const factory OfflineAiModelModel({
     required String id,
     required String name,
@@ -31,3 +31,4 @@ extension OfflineAiModelModelX on OfflineAiModelModel {
         localPath: this.localPath,
       );
 }
+

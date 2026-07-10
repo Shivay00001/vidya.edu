@@ -5,7 +5,7 @@ part 'dashboard_data_model.freezed.dart';
 part 'dashboard_data_model.g.dart';
 
 @freezed
-class DashboardDataModel with _$DashboardDataModel {
+abstract class DashboardDataModel with _$DashboardDataModel {
   const factory DashboardDataModel({
     required int completedCourses,
     required int totalLessons,
@@ -21,7 +21,7 @@ class DashboardDataModel with _$DashboardDataModel {
 }
 
 @freezed
-class RecentActivityModel with _$RecentActivityModel {
+abstract class RecentActivityModel with _$RecentActivityModel {
   const factory RecentActivityModel({
     required String id,
     required String title,
@@ -53,3 +53,5 @@ extension RecentActivityModelX on RecentActivityModel {
         timestamp: this.timestamp,
       );
 }
+
+

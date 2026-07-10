@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide Badge;
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../providers/gamification_provider.dart';
 import '../../domain/entities/achievement.dart';
@@ -123,7 +123,7 @@ class _AchievementsScreenState extends ConsumerState<AchievementsScreen> {
       margin: const EdgeInsets.only(bottom: 12),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: Colors.grey.withOpacity(0.2)),
+        side: BorderSide(color: Colors.grey.withOpacity(0.2)),
       ),
       child: ListTile(
         leading: Container(
@@ -160,3 +160,5 @@ class _AchievementsScreenState extends ConsumerState<AchievementsScreen> {
     );
   }
 }
+
+

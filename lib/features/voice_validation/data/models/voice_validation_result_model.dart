@@ -5,7 +5,7 @@ part 'voice_validation_result_model.freezed.dart';
 part 'voice_validation_result_model.g.dart';
 
 @freezed
-class VoiceValidationResultModel with _$VoiceValidationResultModel {
+abstract class VoiceValidationResultModel with _$VoiceValidationResultModel {
   const factory VoiceValidationResultModel({
     required bool isCorrect,
     required double confidenceScore,
@@ -27,3 +27,4 @@ extension VoiceValidationResultModelX on VoiceValidationResultModel {
         suggestions: suggestions,
       );
 }
+

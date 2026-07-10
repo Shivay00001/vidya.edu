@@ -1,3 +1,4 @@
+import 'package:go_router/go_router.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../providers/dashboard_provider.dart';
@@ -197,7 +198,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> {
         child: Column(
           children: [
             Row(
-              mainAxisAlignment: MainAxisAlignment.between,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 const Text(
                   'Mastery Progress',
@@ -253,7 +254,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> {
           padding: const EdgeInsets.all(12),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(12),
-            border: BorderSide(color: Colors.grey.withOpacity(0.1)),
+            border: Border.all(color: Colors.grey.withOpacity(0.1)),
           ),
           child: Row(
             children: [
@@ -369,3 +370,6 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> {
     );
   }
 }
+
+
+

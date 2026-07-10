@@ -55,7 +55,7 @@ class VoiceValidationRepositoryImpl implements VoiceValidationRepository {
         );
         return Right(transcription);
       } else {
-        return const Left(PermissionFailure(message: 'Speech recognition not available'));
+        return const Left(UnknownFailure('Speech recognition not available'));
       }
     } catch (e) {
       return Left(ServerFailure(e.toString()));
@@ -67,3 +67,4 @@ class VoiceValidationRepositoryImpl implements VoiceValidationRepository {
     await _speechToText.stop();
   }
 }
+

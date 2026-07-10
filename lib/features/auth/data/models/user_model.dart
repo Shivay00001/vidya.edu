@@ -5,7 +5,7 @@ part 'user_model.freezed.dart';
 part 'user_model.g.dart';
 
 @freezed
-class UserModel with _$UserModel {
+abstract class UserModel with _$UserModel {
   const factory UserModel({
     required String id,
     required String email,
@@ -43,3 +43,5 @@ extension UserX on User {
     isEmailVerified: isEmailVerified,
   );
 }
+
+

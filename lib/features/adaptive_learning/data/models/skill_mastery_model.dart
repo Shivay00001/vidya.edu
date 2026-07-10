@@ -5,7 +5,7 @@ part 'skill_mastery_model.freezed.dart';
 part 'skill_mastery_model.g.dart';
 
 @freezed
-class SkillMasteryModel with _$SkillMasteryModel {
+abstract class SkillMasteryModel with _$SkillMasteryModel {
   const factory SkillMasteryModel({
     required String skillId,
     required String skillName,
@@ -29,3 +29,5 @@ extension SkillMasteryModelX on SkillMasteryModel {
         weakAreas: this.weakAreas,
       );
 }
+
+

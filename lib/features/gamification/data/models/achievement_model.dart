@@ -5,7 +5,7 @@ part 'achievement_model.freezed.dart';
 part 'achievement_model.g.dart';
 
 @freezed
-class AchievementModel with _$AchievementModel {
+abstract class AchievementModel with _$AchievementModel {
   const factory AchievementModel({
     required String id,
     required String title,
@@ -20,7 +20,7 @@ class AchievementModel with _$AchievementModel {
 }
 
 @freezed
-class BadgeModel with _$BadgeModel {
+abstract class BadgeModel with _$BadgeModel {
   const factory BadgeModel({
     required String id,
     required String name,
@@ -51,3 +51,5 @@ extension BadgeModelX on BadgeModel {
         criteria: criteria,
       );
 }
+
+

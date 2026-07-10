@@ -4,7 +4,6 @@ import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
-import 'core/network/api_client.dart';
 import 'core/router/app_router.dart';
 import 'core/services/notification_service.dart';
 import 'core/services/storage_service.dart';
@@ -61,7 +60,7 @@ class AIEdTechApp extends ConsumerWidget {
       routerConfig: router,
       builder: (context, child) {
         return MediaQuery(
-          data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
+          data: MediaQuery.of(context).copyWith(textScaler: const TextScaler.linear(1.0)),
           child: child!,
         );
       },
@@ -89,3 +88,4 @@ class ThemeModeNotifier extends StateNotifier<ThemeMode> {
     await StorageService.setThemeMode(state == ThemeMode.dark);
   }
 }
+

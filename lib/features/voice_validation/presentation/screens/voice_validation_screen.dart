@@ -43,7 +43,7 @@ class _VoiceValidationScreenState extends ConsumerState<VoiceValidationScreen> {
       elevation: 0,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: Colors.grey.withOpacity(0.2)),
+        side: BorderSide(color: Colors.grey.withOpacity(0.2)),
       ),
       child: const Padding(
         padding: EdgeInsets.all(20.0),
@@ -71,7 +71,7 @@ class _VoiceValidationScreenState extends ConsumerState<VoiceValidationScreen> {
       color: result.isCorrect ? Colors.green.withOpacity(0.1) : Colors.red.withOpacity(0.1),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: result.isCorrect ? Colors.green : Colors.red),
+        side: BorderSide(color: result.isCorrect ? Colors.green : Colors.red),
       ),
       child: Padding(
         padding: const EdgeInsets.all(20.0),
@@ -169,3 +169,4 @@ class _VoiceValidationScreenState extends ConsumerState<VoiceValidationScreen> {
     );
   }
 }
+

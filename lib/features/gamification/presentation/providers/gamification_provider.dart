@@ -1,9 +1,9 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../../../core/network/api_client.dart';
+import '../../../../core/network/api_client.dart';
 import '../../domain/entities/achievement.dart';
 import '../../domain/usecases/get_achievements_usecase.dart';
 import '../../data/repositories/gamification_repository_impl.dart';
-import '../../../features/auth/presentation/providers/auth_provider.dart';
+import '../../../auth/presentation/providers/auth_provider.dart';
 
 // Repository Provider
 final gamificationRepositoryProvider = Provider((ref) {
@@ -48,7 +48,7 @@ class GamificationState {
 // Gamification Notifier
 class GamificationNotifier extends StateNotifier<GamificationState> {
   final GetAchievementsUseCase getAchievementsUseCase;
-  final GamificationRepository repository;
+  final GamificationRepositoryImpl repository;
 
   GamificationNotifier({
     required this.getAchievementsUseCase,
@@ -88,3 +88,4 @@ final gamificationProvider =
     repository: ref.read(gamificationRepositoryProvider),
   );
 });
+

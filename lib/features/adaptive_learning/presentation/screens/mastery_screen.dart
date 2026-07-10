@@ -119,7 +119,7 @@ class _MasteryScreenState extends ConsumerState<MasteryScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Row(
-              mainAxisAlignment: MainAxisAlignment.between,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
                   mastery.skillName,
@@ -196,3 +196,4 @@ class _MasteryScreenState extends ConsumerState<MasteryScreen> {
     }
   }
 }
+
