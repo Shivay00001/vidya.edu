@@ -1,91 +1,41 @@
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:hive_flutter/hive_flutter.dart';
 
-import 'core/network/api_client.dart';
-import 'core/router/app_router.dart';
-import 'core/services/notification_service.dart';
-import 'core/services/storage_service.dart';
-import 'core/theme/app_theme.dart';
+void main() { runApp(const MyApp()); }
 
-void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-
-  // Initialize Firebase
-  await Firebase.initializeApp();
-
-  // Initialize Hive
-  await Hive.initFlutter();
-  await StorageService.init();
-
-  // Initialize Services
-  await NotificationService().initialize();
-
-  // Set preferred orientations
-  await SystemChrome.setPreferredOrientations([
-    DeviceOrientation.portraitUp,
-    DeviceOrientation.portraitDown,
-  ]);
-
-  // Set system UI overlay style
-  SystemChrome.setSystemUIOverlayStyle(
-    const SystemUiOverlayStyle(
-      statusBarColor: Colors.transparent,
-      statusBarIconBrightness: Brightness.dark,
-    ),
-  );
-
-  runApp(
-    const ProviderScope(
-      child: AIEdTechApp(),
-    ),
-  );
-}
-
-class AIEdTechApp extends ConsumerWidget {
-  const AIEdTechApp({super.key});
-
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final router = ref.watch(routerProvider);
-    final themeMode = ref.watch(themeModeProvider);
-
-    return MaterialApp.router(
-      title: 'AI EdTech Platform',
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'vidya.edu',
+      theme: ThemeData(brightness: Brightness.dark, primaryColor: const Color(0xFF6366F1), scaffoldBackgroundColor: const Color(0xFF0F172A)),
+      home: const DashboardScreen(),
       debugShowCheckedModeBanner: false,
-      theme: AppTheme.lightTheme,
-      darkTheme: AppTheme.darkTheme,
-      themeMode: themeMode,
-      routerConfig: router,
-      builder: (context, child) {
-        return MediaQuery(
-          data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
-          child: child!,
-        );
-      },
     );
   }
 }
 
-// Theme Mode Provider
-final themeModeProvider = StateNotifierProvider<ThemeModeNotifier, ThemeMode>((ref) {
-  return ThemeModeNotifier();
-});
-
-class ThemeModeNotifier extends StateNotifier<ThemeMode> {
-  ThemeModeNotifier() : super(ThemeMode.light) {
-    _loadThemeMode();
-  }
-
-  Future<void> _loadThemeMode() async {
-    final isDark = await StorageService.getThemeMode();
-    state = isDark ? ThemeMode.dark : ThemeMode.light;
-  }
-
-  Future<void> toggleTheme() async {
-    state = state == ThemeMode.light ? ThemeMode.dark : ThemeMode.light;
-    await StorageService.setThemeMode(state == ThemeMode.dark);
+class DashboardScreen extends StatelessWidget {
+  const DashboardScreen({super.key});
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text('vidya.edu', style: const TextStyle(fontSize: 42, fontWeight: FontWeight.bold, color: Colors.white)),
+            const SizedBox(height: 16),
+            const Text('Next-generation enterprise software platform.', style: TextStyle(color: Colors.white70)),
+            const SizedBox(height: 48),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(backgroundColor: const Color(0xFF6366F1), padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 16)),
+              onPressed: () {},
+              child: const Text('Launch Application'),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }
