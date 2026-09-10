@@ -31,3 +31,8 @@ Vidya.Edu is a premium, AI-powered EdTech platform built with Flutter and Clean 
 
 ---
 Created by Vidya.Edu Team
+
+
+## Prerequisites
+- Required environment and dependencies
+
