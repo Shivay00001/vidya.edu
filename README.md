@@ -1,5 +1,7 @@
 # Vidya.Edu - AI EdTech Pro
 
+Built by [VisionQuantech](https://visionquantech.com) — AI agents, apps & tools for small businesses.
+
 Vidya.Edu is a premium, AI-powered EdTech platform built with Flutter and Clean Architecture. It provides a personalized learning experience with an AI Tutor, interactive learning paths, gamification, and advanced AI features like voice validation and knowledge mastery tracing.
 
 ## Features
@@ -35,4 +37,3 @@ Created by Vidya.Edu Team
 
 ## Prerequisites
 - Required environment and dependencies
-
